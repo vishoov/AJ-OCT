@@ -1,0 +1,14 @@
+Node.JS Working
+
+JS runtime that helps our servers to stay live all the time
+so that we can respond to maximum requests that we recieve on the server 
+
+Core Concepts 
+
+-> Single Threaded event loop -> every request we send to the server is collect in an event loop, shortens the response time 
+
+-> Non - blocking I/O -> node.js can handle multiple concurrent operations efficiently.
+
+-> Event-driven architecture -> as an event is triggered in the server a callback function is executed
+
+-> Module system -> we can write js code in chunks to reduce unecessary processing of the server 

@@ -1,0 +1,16 @@
+Express.js 
+
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web API design and server side application logic
+
+Express is built on top of Node.js for fast and scalable server-side development.
+
+1. npm install express
+
+
+
+
+
+
+The express() function creates an express application instance that represents the web server.
+
+This application object provides methods for routing, for features, for security, for middlewares and this acts like a central point for all server configuration and request handling. 

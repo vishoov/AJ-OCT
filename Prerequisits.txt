@@ -1,0 +1,26 @@
+JS Concepts
+
+Variables DataTypes
+Functions
+Objects and Arrays
+Asynchronous JS
+ES6+ features
+
+Web Development Concepts
+
+HTTP Protocol, request-resposne cycle, status codes 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status 
+JSON 
+npm 
+
+RESTful API Architecture 
+
+- Representational State Transfer is an architectural style for designing APIS that are scalable,robust and secure
+
+-in APIs we use HTTP requests and methods to perform CRUD operations on resources treating data as a resource
+
+- Statelessness -> each API request contains all the information that is required for processing of the data from the server to the client 
+
+- Resouce - Based Architecture -> 1 feature = 1 route 
+
+- Uniform interface -> include consistent interaction patterns across the API

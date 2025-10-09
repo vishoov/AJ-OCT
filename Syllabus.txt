@@ -1,0 +1,13 @@
+Node.js Setup
+Express.JS -> Routing, Middlewares, Advanced Routing -> Dynamic Routing (route params, query params)
+Databases
+Data Validation - mongoose
+Security -> JWT, bcrypt, encryption, server security, password security, prevention against hacker attacks
+WebRTC -> real time communication
+Multer for file uploads 
+
+user management API
+blog management API
+chat application
+
+Final Project -> ecommerce application 
