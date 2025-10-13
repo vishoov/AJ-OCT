@@ -21,6 +21,6 @@ RESTful API Architecture
 
 - Statelessness -> each API request contains all the information that is required for processing of the data from the server to the client 
 
-- Resouce - Based Architecture -> 1 feature = 1 route 
+- Resource - Based Architecture -> 1 feature = 1 route 
 
 - Uniform interface -> include consistent interaction patterns across the API

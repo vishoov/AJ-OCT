@@ -5,10 +5,13 @@ const express = require('express');
 const app = express();
 
 //route 
+//document.addEventListenrr('event-name', ()=>{})
 app.get("/", (req, res)=>{
+
     res.send("Welcome to our server")
 })
 
+//anynewroutecomeshere
 
 //port listener 
 //document.addEventListener('event-name', callbackFunction);
