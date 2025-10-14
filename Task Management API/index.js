@@ -1,11 +1,23 @@
 const express = require('express');
 const app = express();
 
+
+
+
 //Routing 
 
 //app.METHOD(path, HANDLER)
 
-// client -----req----->SERVER 
+app.get('/homePage', (req, res)=>{
+    res.send("Welcome to the home page")
+})
+
+app.get("/contact", (req, res)=>{
+    res.send("Welcome to contact page")
+})
+
+
+// client -----req----->SERVER  -> maps that request's path with the defined routes /home 
 //     <--------res-----<
 
 
@@ -96,6 +108,12 @@ app.post('/create', (req, res)=>{
 
 
 
+//http://domain.com/path 
+// /path  - handler function 
+// Creating, Reading, Updating, Deleting (CRUD)
+// clean, secure and efficient management of Data
+
+// client <=== server ===> DB 
 
 
 
