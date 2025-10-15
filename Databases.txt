@@ -1,0 +1,63 @@
+Databases are the storages where we store our application data 
+facebook -> million of users -> stored somewhere 
+
+-> a huge storage for a huge number of users
+-> high security 
+-> fast 
+-> organized
+
+
+Relational (SQL databases)
+    - store the data in form of tables (rows and column)
+    - rules and regulation -> security, schema 
+    - enforce relationships between different tables using keys 
+    - highly structured and highly strict
+    - upi systems, bank systems, flight management 
+
+    ecommerce -> user, products, reviews
+
+    example -> name, email, password -> tables 
+
+    pros-> security, structure, complex queries
+
+    problem -> 
+        user signup => name, email, password, gender
+        after 2 years 
+        user data -> phone number 
+
+        This is not possible 
+
+    Data Migration -> process of moving data from one database to another 
+
+
+
+Non-Relational (mongoDB, redis)
+
+    - Store the data in flexible formats -> documents (JSON) mongoDB, key-value (redis), column-family stores (cassandra), graph
+    - No schema or table relationship 
+    - suitable for evolving data 
+    - Very very fast 
+    - Application -> startups, netflix, airbnb, youtube live, bookMyShow
+
+
+    whenever my current database exhausts, how to expand the database -> scaling 
+
+    Relational -> Vertical = we increase the physical memory of the same database 
+    ||
+    ||
+    ||
+
+    Non-Relational -> Horizontal = we add another physical location of same storage capacity
+    |A|  |B|  |C|   |D|  
+
+
+    mongoDB nonRelation -> documents 
+
+    - mongoDB shell -> Command line interface for database
+    - mongoDB compass -> software tool 
+    - mongoDB Atlas -> cloud database deployment 
+
+
+HW
+    1. mongoDB community server 
+    2. MVC Architecture

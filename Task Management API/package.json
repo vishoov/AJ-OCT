@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev":"nodemon index.js",
-    "dynamic":"nodemon dynamic.js",
-    "middlewares":"nodemon middlewares.js"
+    "dev": "nodemon index.js",
+    "dynamic": "nodemon dynamic.js",
+    "middlewares": "nodemon middlewares.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
+    "morgan": "^1.10.1",
     "nodemon": "^3.1.10"
   }
 }

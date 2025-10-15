@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 
-
+const modularRoutes = require("./routes/modular.routes")
 
 //Routing 
 
@@ -16,7 +16,7 @@ app.get("/contact", (req, res)=>{
     res.send("Welcome to contact page")
 })
 
-
+app.use(modularRoutes)
 // client -----req----->SERVER  -> maps that request's path with the defined routes /home 
 //     <--------res-----<
 
