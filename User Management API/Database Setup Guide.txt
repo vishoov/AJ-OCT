@@ -1,0 +1,7 @@
+1. MongoDB Atlas Database -> cloud database by MongoDB
+
+signup on mongoDB atlass portal
+create a new project -> write name and tags (optional)
+
+
+CLUSTER -> physical storage where your data will be stored (example data center)

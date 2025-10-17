@@ -1,0 +1,12 @@
+MVC Architecture 
+
+utilise the modularity or modular javascript 
+
+single threaded 
+
+Model-View-Controller Architecture is a way of structuring our project files in such a way that the project's working is highly efficient and scalable 
+
+Model -> the schema and data validation part of our project
+View -> routes in our server
+Controller -> Handler Function
+

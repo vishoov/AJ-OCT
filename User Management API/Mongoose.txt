@@ -1,0 +1,51 @@
+Mongoose is ODM -> Object Data Modelling tool 
+
+this is used as a driver for
+
+- connecting to the database 
+- defining a schema (useful for validation of data)
+- querying = fetch, add, update, remove
+
+
+client ----API-----server ---mongoose= (DB URI) ---- mongoDB
+
+
+email-> vishoo@.com
+password-> abc
+
+Data Validation and Modelling 
+
+- data integrity 
+
+username
+email
+password
+age
+
+
+- security 
+
+password -> longer the password, harder it is to crack it 
+
+- uniform 
+
+role based authentication 
+
+user 
+
+name,
+email,
+password,
+role => user, guest, admin, superadmin
+
+
+How is data stored in mongoDB
+
+Cluster -> Database -> Collections -> documents (json object for a single data entity) 
+
+Collections in mongoDB are like tables where we store similar kind of data together for organization purposes
+
+
+Whenevr we write a schema it is always implemented in a single collection 
+and both of these things combined 
+schema + collection = model! 

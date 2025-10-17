@@ -1,0 +1,18 @@
+
+HTTP        Endpoint            Desc            Request             Response
+Method                                          Body
+
+POST        /register       signing up      email, password,            success 
+                            a new user      age, gender, username      message  
+
+post        /login          authenticating      email, password         token 
+                            a user & gets a
+                            token
+
+GET         /users          array of all        -                   user data
+                            users
+
+GET         /users/:id       a single user      id              user data       
+
+DELETE     /users/:id         deleting a user   -               deletion        
+                                                                confirmation
