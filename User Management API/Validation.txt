@@ -1,0 +1,56 @@
+Validation is the process of cross checking the data to make sure if it is in required format, or not
+
+
+Mongoose provides a powerful and flexible way of validating the data before saving it to the MongoDB
+
+
+req--->server ---> validate ----> DB
+                  (mongoose)
+
+
+Validators Types:-
+
+1. Built-in 
+
+a. required -> ensures a field should be present 
+require:true-> this will send an error if that field is missing 
+
+b. unqiue -> ensures that the data we have entered in the field should not be duplicated 
+the value in the field should be only present in one document not duplicated 
+
+c. Number Validators 
+min -> minimum value of the number that we can add
+max -> max permitted value of the number that we can add
+
+d. String Validators
+
+inputting strings -> 
+
+minLength -> string should be atleast of this length -> 'ball' -> 4 character  
+maxLength -> stirng can be at max of this length 
+enum -> restricts the permitted values of the string 
+match -> pattern matching using RegEx
+
+
+e. Custom Validator 
+
+validate :{
+    validator: function(arg){
+
+    }
+}
+
+
+Options -> 
+
+1. select -> if we want to hide any data in queries for security 
+
+select:false-> it will exclude the data from the query that is being sent to the server 
+
+
+Querying 
+limit  
+skip 
+
+
+Error Handling in Schema 

@@ -1,0 +1,162 @@
+CRUD Operations 
+
+C -> Create 
+R -> Read 
+U -> Update 
+D -> Delete 
+
+General Syntax for Queries 
+
+const response = await Model.Query(condition or data);
+
+response = is the document that is saved in the database 
+Model = is the schema and collection that we are using for the data 
+Query = CRUD operation (create, find, update, Delete)
+condition or data = that is used to match the data  (or data in case of create and update)
+
+
+Prerequisites-> 
+1. Querying always comes in asynchronous code 
+2. Error handling with the data 
+
+
+
+1. Create Query 
+
+a. const user = await User.create(userData);
+
+create method -> takes the user information object as argument 
+
+b. Object oriented method of creating data in the database 
+
+   const user= new User(data);
+   await user.save();
+
+
+
+
+
+2. Read Query -> find()
+
+const users = await User.find(
+    {
+        conditions i want the users based on 
+    }
+)
+
+Note :- find query ALWAYS returns an ARRAY
+
+A. matching query -> where we want the value present in the db to exactly match the query value 
+
+
+
+Whenever we require the database to return a single document in a query we use 
+findOne() -> this returns the first document that matches the conditions 
+
+
+//write a route to find users through id
+
+ {
+            "_id": "68f90ab28084c8f52bc9789f",
+            "username": "AnotherGuy",
+            "email": "anotherw31111@guy.com",
+            "password": "iI#2963phf",
+            "role": "user",
+            "age": 30,
+            "__v": 0
+        },
+
+pick id from query params and return the user's username, email and role 
+
+
+Note : WHenever you have to find any data through _id -> you can use
+
+findById method of mongoose which provides faster indexing 
+
+findByIdAndUpdate
+findByIdAndDelete
+
+
+B. Comparison Operators in find Query
+
+age>15 
+age<60
+
+Operator   Usage                Example
+$gt        greater than         { age: { $gt:18 }}
+$lt        less than            { age : { $lt: 50 }}
+$gte       greater than         { age : { $gte: 18 }}
+           or equal to
+$lte        less than or eq to  { age : { $lte: 50 }}
+$ne         not equal to        { age : { $ne: 30}}
+
+
+$in         matches a value     { role: { $in : ['admin', 'superadmin']}}
+            present in list
+$nin        should not exist    { role: { $nin: ['user']}}
+            in array
+
+
+write a route to find the users of all ages but 30, 40, 50
+
+
+
+user with roles -> admin or superadmin 
+
+role: {
+    $in : ['admin', 'superadmin']
+}
+
+Logical Operators 
+
+and -> $and -> arrays 
+or -> $or
+not -> $not
+
+
+I want to find a user who is an admin and whos age is 30
+
+
+Update Queries 
+
+
+identify user -> add the new information 
+
+updateOne 
+const user = User.findOneAndUpdate(
+    {
+        QUERY THROUGH WHICH WE FIND or FILTER THE DATA 
+    },
+    {
+        $set:{
+        THE UPDATE INFORMATION 
+        }
+    },
+    {
+        options -> new:true -> this will add the updated information in the user object 
+    }
+)
+
+Example 1.
+
+find a user through username, and update his emailId
+
+
+1. updateOne or findOneAndUpdate -> you have to write a query, then updated information. These methods will find one document matching the QUERY and will replace the updated data with the older data 
+
+2. updateMany -> query -> whatever document matches the query, will be updated 
+
+3. findByIdAndUpdate -> instead of query object we only have to write the userId 
+
+4. let user = await User.find({query});
+    user.password = "fofog3oy49y"
+    await user.save();
+
+
+Delete 
+
+1. deleteOne or findOneAndDelete -> finds the data using the query and deletes it 
+
+2. findByIdAndDelete -> query= id 
+
+3. deleteMany()
