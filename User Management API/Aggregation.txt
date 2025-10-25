@@ -1,0 +1,9 @@
+Aggregation pipelines are sequence of data transformations and processing applied step-by-step to the data coming from the database one by one to shape the data according to our requirements;
+
+
+benefits of aggregation?
+
+1. efficient data processing : transform the data directly in the database 
+2. scalable analytics : we can process huge amounts of datasets efficiently with optimizations for lower latency 
+3. flexibility in transformation : multiple stages that shape, process, count, analyse, and perform complex calculations
+4. NON DESTRUCTIVE IN NATURE 

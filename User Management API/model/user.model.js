@@ -48,6 +48,7 @@ const userSchema = mongoose.Schema({
 
 
 //connecting it to a collection where all the data using that schema will be stored
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
