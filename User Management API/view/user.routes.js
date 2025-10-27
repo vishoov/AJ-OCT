@@ -39,10 +39,19 @@ router.post('/login', async (req, res)=>{
 
 console.log(data)
 
-    if(data.password!==password){
-        return res.status(400).send("Password is incorrect")
-    }
+//password stored in DB -> encrypted
+//password sent while login -> plain
+
+    // if(data.password!==password){
+    //     return res.status(400).send("Password is incorrect")
+    // }
   
+    if(!data.comparePassword(password)){
+        return res.json({
+            message:"Password incorrect"
+        })
+    }
+
 
     res.json({
         message:"You have successfully logged in",

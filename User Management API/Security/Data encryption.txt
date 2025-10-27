@@ -1,0 +1,13 @@
+
+Data encryption is process of converting the plain data into a long long and very hard to read string
+so that anyone else who does not have the access to the data cannot steal it 
+
+
+Client ----Req---> Server ----Model-----> DB
+                                   ^
+                                encrypt the password
+                                using bcrypt 
+
+npm install bcrypt 
+
+bcrypt -> is the package that helps us in enrypting the data and making it impossible to be hacked 

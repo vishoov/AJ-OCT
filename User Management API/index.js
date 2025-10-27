@@ -5,6 +5,8 @@ app.use(express.json());
 const mongoose = require('mongoose');
 const aggregationRoutes = require('./view/user.aggregation')
 // server = mongoose ----URI----DB
+const rateLimiter = require('./Security/RateLimiting')
+
 
 const uri= "mongodb+srv://vverma971_db_user:YQur1HImAdcX11Uy@cluster0.exnq8ct.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 // URI = uniform resource identifier 
@@ -23,7 +25,7 @@ mongoose.connect(uri)
 
 
 
-
+app.use(rateLimiter);
 app.use(userRoutes);
 
 app.get('/', (req, res)=>{
