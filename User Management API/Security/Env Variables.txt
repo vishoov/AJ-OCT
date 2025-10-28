@@ -1,0 +1,11 @@
+Environment Variables are key value pairs stored outside of applications that control the environment in which our projects run
+
+
+npm install dotenv
+
+dotenv -> is the official package for using environment variables, 
+
+1. .env file 
+2. execute this file
+
+.env -> creates key-value pairs of sensitive data that we cant send to github

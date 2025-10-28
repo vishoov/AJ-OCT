@@ -7,9 +7,19 @@ const aggregationRoutes = require('./view/user.aggregation')
 // server = mongoose ----URI----DB
 const rateLimiter = require('./Security/RateLimiting')
 
+//logger security
+const { loggerMiddleware } = require('./Security/Logging');
 
-const uri= "mongodb+srv://vverma971_db_user:YQur1HImAdcX11Uy@cluster0.exnq8ct.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+app.use(loggerMiddleware)
+
+
+//dotenv usage
+const dotenv = require("dotenv");
+dotenv.config();
+
+const uri= process.env.MONGO_URI;
 // URI = uniform resource identifier 
+
 
 //promise 
 //sends a promise to the DB -> database verifies from its own end 
@@ -21,7 +31,7 @@ mongoose.connect(uri)
 .catch((err)=>err.message)
 
 
-
+//middleware for logging the requests 
 
 
 

@@ -1,0 +1,45 @@
+API authentication is the process of authentication or checking whether a user is a part of our product or not
+
+signup and login
+
+Routes in terms of security 
+- public -> that can be accessed without sign up or login
+- private -> that require to be authenticated
+
+signup => user data
+login => email and password => verified or not 
+
+Points to remember
+1. Stateless -> we cannot store any information on the Server
+2. RESTful -> each route is independant and standalone
+
+
+History 
+
+1. email password > route > repeated
+    problem -> the user retention rate drops 
+
+2. session based authentication
+
+login -> sessionID -> client, server -> after that -> if sessionIDs match -> authenticated
+public
+
+-> problem -> as users start to increase our resources become limited
+
+1000MB Storage -> 1000000 -> scaling?
+
+3. JWT -> Json web token -> 
+
+1. self contained -> only be creating one token -> client side 
+2. opiniated -> unique for each user
+3. lightweight -> takes very very less space 
+4. encrypted -> info in this will be hidden
+
+watch a movie -> show your id to the security guard 
+
+token -> 
+header -> specific information like algorithm used, expiry 
+payload -> user specific information
+signature -> unique string that we have on server that helps in identifying if the token is genuine or not
+
+Documentation Link : https://www.jwt.io/introduction#what-is-json-web-token-structure 

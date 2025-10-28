@@ -13,7 +13,7 @@
 
 //hackers use 10000s of small bots that keep sending requests to our server repeatedly 
 
-//Rate limiting to limit the number of requests we can reciever from a certain IP address in a given time frame 
+//Rate limiting to limit the number of requests we can recieve from a certain IP address in a given time frame 
 
 //------code--------
 const rateLimit = require('express-rate-limit');
@@ -21,7 +21,7 @@ const rateLimit = require('express-rate-limit');
 const rateLimiter = rateLimit({
     //Time window in miliseconds
     windowMs: 1000*60*60,
-    max:5,
+    max:100,
     message:"Too many requests from this IP address, please try again after 60 minutes"
 
 })
