@@ -39,6 +39,7 @@ app.use(rateLimiter);
 app.use(userRoutes);
 
 app.get('/', (req, res)=>{
+    console.log("Headers:", req.headers)
     res.send("Welcome to the user management api")
 })
 

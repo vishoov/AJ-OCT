@@ -20,7 +20,7 @@ const userSchema = mongoose.Schema({
     email:{
         type:String,
         required:true,
-        unique:true, //this avoids duplicacy of emails 
+        // unique:true, //this avoids duplicacy of emails 
         match:/^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/ 
     },
     password:{

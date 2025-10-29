@@ -43,3 +43,10 @@ payload -> user specific information
 signature -> unique string that we have on server that helps in identifying if the token is genuine or not
 
 Documentation Link : https://www.jwt.io/introduction#what-is-json-web-token-structure 
+
+
+Creating a token
+
+
+
+verifying a token 

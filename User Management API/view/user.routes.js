@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User= require('../model/user.model')
+const { createToken, verifyToken } = require("../Security/jwt.auth")
 // const users = [
 //     {
 //         id:1,
@@ -13,20 +14,35 @@ const User= require('../model/user.model')
 
 //register
 router.post("/register", async (req, res)=>{
+    try{
     const data = req.body;
 
     // users.push(data);
     //mongoose way
-    // const userData = await User.create(data);
+    const userData = await User.create(data);
 
     //OOP way
-    const userData = new User(data);
-    await userData.save();
+    // const userData = new User(data);
+    // await userData.save();
+
+    if(!userData){
+        res.json({
+            message:"the user didnt sign up"
+        })
+    }
+
+
+    const token = await createToken(userData);
 
     res.json({
         message:"User created",
-        userData
+        userData,
+        token
     })
+    }
+    catch(err){
+        res.send(err.message)
+    }
 })
 //login
 router.post('/login', async (req, res)=>{
@@ -68,7 +84,7 @@ console.log(data)
 
 
 //users/
-router.get("/users", async (req, res)=>{
+router.get("/users", verifyToken, async (req, res)=>{
     try{
     const users = await User.find();
 
