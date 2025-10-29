@@ -66,7 +66,18 @@ const verifyToken  = (req, res, next)=>{
 }
 
 
+const roleMiddleware = (allowedRoles) => (req, res, next)=>{
+    if(!allowedRoles.includes(req.user.role)){
+        return res.status(400).json({
+            message:"Access denied, Limited Persmissions allowed "
+        })
+    }
+
+    next()
+}
+
 module.exports = {
     createToken,
-    verifyToken
+    verifyToken,
+    roleMiddleware
 }

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User= require('../model/user.model')
-const { createToken, verifyToken } = require("../Security/jwt.auth")
+const { createToken, verifyToken, roleMiddleware } = require("../Security/jwt.auth")
 // const users = [
 //     {
 //         id:1,
@@ -157,7 +157,7 @@ router.get("/adultUsers", async (req, res)=>{
     }
 })
 
-router.get("/userswithadmin", async (req, res)=>{
+router.get("/userswithadmin", verifyToken, roleMiddleware(['superadmin']), async (req, res)=>{
     try{
         const users = await User.find(
             {
