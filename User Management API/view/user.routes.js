@@ -19,11 +19,11 @@ router.post("/register", async (req, res)=>{
 
     // users.push(data);
     //mongoose way
-    const userData = await User.create(data);
+    // const userData = await User.create(data);
 
     //OOP way
-    // const userData = new User(data);
-    // await userData.save();
+    const userData = new User(data);
+    await userData.save();
 
     if(!userData){
         res.json({
@@ -33,6 +33,10 @@ router.post("/register", async (req, res)=>{
 
 
     const token = await createToken(userData);
+
+    if(!token){
+        res.json({message:"No token created"})
+    }
 
     res.json({
         message:"User created",
@@ -157,7 +161,7 @@ router.get("/adultUsers", async (req, res)=>{
     }
 })
 
-router.get("/userswithadmin", verifyToken, roleMiddleware(['superadmin']), async (req, res)=>{
+router.get("/userswithadmin", verifyToken, roleMiddleware(['admin', 'superadmin']), async (req, res)=>{
     try{
         const users = await User.find(
             {
