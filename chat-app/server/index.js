@@ -27,6 +27,12 @@ const io = new socket.Server(
 //document.addEventListener('event-name', callback)
 io.on('connection', (socket)=>{
     console.log(`a new user with id ${socket.id} is connected`)
+
+    socket.on("message", ({message, reciever})=>{
+        console.log(message)
+        //to()
+        io.to(reciever).emit("forward", message)
+    })
 })
 
 
