@@ -2,3 +2,9 @@
 
 
 2. create a new project in atlass and connect it to our application through mongoose 
+
+
+
+HW -> 
+
+implement bcrypt and jwt 
