@@ -1,0 +1,4 @@
+1. initialising the node.js application and installing express and nodemon, configuring our project and making it live
+
+
+2. create a new project in atlass and connect it to our application through mongoose 
