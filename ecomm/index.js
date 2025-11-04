@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 
 const userRoutes = require("./view/user.view")
+const productRoutes = require("./view/product.view")
+
+
+
 const uri = "mongodb+srv://vverma971_db_user:Iygu1RXgKrPmhnJr@cluster0.tcnoggx.mongodb.net/?appName=Cluster0"
 
 // database connection
@@ -22,6 +26,7 @@ app.get("/", (req, res)=>{
 })
 
 app.use("/v1", userRoutes)
+app.use("/v1", productRoutes)
 
 
 app.listen(3000, ()=>{
