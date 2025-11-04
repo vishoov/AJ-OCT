@@ -7,9 +7,9 @@ const{
 } = require('../controller/cart.controller')
 
 
-router.post('/addtocart', addtocart)
+router.post('/addtocart/:id', addtocart)
 
-router.delete('/deletefromcart', deletefromcart)
+router.delete('/deletefromcart/:id', deletefromcart)
 
 router.get('/cart/:id', fetchcart)
 

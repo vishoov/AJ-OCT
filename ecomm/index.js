@@ -3,8 +3,8 @@ const app = express()
 
 const userRoutes = require("./view/user.view")
 const productRoutes = require("./view/product.view")
-
-
+const cartRoutes = require("./view/cart.view")
+const orderRoutes = require("./view/order.view")
 
 const uri = "mongodb+srv://vverma971_db_user:Iygu1RXgKrPmhnJr@cluster0.tcnoggx.mongodb.net/?appName=Cluster0"
 
@@ -27,7 +27,8 @@ app.get("/", (req, res)=>{
 
 app.use("/v1", userRoutes)
 app.use("/v1", productRoutes)
-
+app.use("/v1", cartRoutes)
+app.use("/v1", orderRoutes)
 
 app.listen(3000, ()=>{
     console.log("connected to server at http://localhost:3000/")
